@@ -3,6 +3,7 @@
 #include <string>
 #include <vector>
 #include <cstdlib>
+#include <ctime>
 
 using namespace std;
 
@@ -47,7 +48,10 @@ int main (int argc, char** argv) {
 	}
 	
 	//Generate the problem set file
-	
+
+	//SEED rand, this is important.
+	srand(time(NULL));
+
 	for(int i = 0; i < numberOfProblems; i++) {
 		int problemIndex = rand() % problems.size();
 		outFile << problems[problemIndex] << '\n';
